@@ -52,4 +52,7 @@ AssemblyInfo.cs
 
 # Anything else
 Thumbs.db
+<<<<<<< Updated upstream
 .DS_Store
+=======
+>>>>>>> Stashed changes
