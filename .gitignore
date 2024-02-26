@@ -13,6 +13,9 @@
 Packages/MSTest*
 Packages/NUnit*
 
+# Other folders for assets that struggle to push
+/Characters
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
