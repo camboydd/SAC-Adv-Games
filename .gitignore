@@ -52,3 +52,4 @@ AssemblyInfo.cs
 
 # Anything else
 Thumbs.db
+.DS_Store
