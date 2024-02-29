@@ -15,6 +15,9 @@ public class FPSController : MonoBehaviour
     public float lookSpeed;
     public float lookXLimit;
 
+    public GameObject Sword;
+    public Animator animator;
+
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
@@ -75,5 +78,14 @@ public class FPSController : MonoBehaviour
         }
 
         #endregion
+
+        #region Sword Swing
+        if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetBool("LAttack", true);
+            Debug.Log("lEFT mOUSE BUTTON CLICKED");
+        }
+        #endregion
+
     }
 }

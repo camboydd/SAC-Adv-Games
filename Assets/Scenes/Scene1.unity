@@ -1226,6 +1226,8 @@ MonoBehaviour:
   gravity: 10
   lookSpeed: 2
   lookXLimit: 25
+  Sword: {fileID: 0}
+  animator: {fileID: 5866666021909216657, guid: 137ccd4a741c69e4f9125eea7e145ffa, type: 3}
   canMove: 1
 --- !u!143 &570349498
 CharacterController:
@@ -1935,6 +1937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 40c73eb4fd040e34f98b76ec6fe6b614, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 55327fdc596ffba4b870caae0b761b8d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
