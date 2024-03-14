@@ -451,6 +451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afa0b097ed1764f8fb6b9650d7d8c4ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1813710753}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afa0b097ed1764f8fb6b9650d7d8c4ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1813710754}
   m_SourcePrefab: {fileID: 100100000, guid: afa0b097ed1764f8fb6b9650d7d8c4ca, type: 3}
 --- !u!4 &219940567 stripped
 Transform:
@@ -1202,7 +1205,7 @@ GameObject:
   - component: {fileID: 570349497}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,12 +1225,12 @@ MonoBehaviour:
   playerCamera: {fileID: 876963027}
   walkSpeed: 6
   runSpeed: 12
-  jumpPower: 7
+  jumpPower: 4
   gravity: 10
   lookSpeed: 2
   lookXLimit: 25
   Sword: {fileID: 0}
-  animator: {fileID: 5866666021909216657, guid: 137ccd4a741c69e4f9125eea7e145ffa, type: 3}
+  anim: {fileID: 1892010871}
   canMove: 1
 --- !u!143 &570349498
 CharacterController:
@@ -3789,6 +3792,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &1813710754
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813710749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.27291393
+  m_Height: 1.9455986
+  m_Direction: 1
+  m_Center: {x: -0.0140218735, y: 1.0223875, z: 0}
 --- !u!1001 &1815357003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4030,6 +4056,11 @@ PrefabInstance:
 --- !u!4 &1892010870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40c73eb4fd040e34f98b76ec6fe6b614, type: 3}
+  m_PrefabInstance: {fileID: 861677151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1892010871 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 40c73eb4fd040e34f98b76ec6fe6b614, type: 3}
   m_PrefabInstance: {fileID: 861677151}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1903845731 stripped

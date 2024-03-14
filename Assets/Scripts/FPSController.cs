@@ -16,7 +16,7 @@ public class FPSController : MonoBehaviour
     public float lookXLimit;
 
     public GameObject Sword;
-    public Animator animator;
+    [SerializeField] private Animator anim;
 
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
@@ -31,6 +31,7 @@ public class FPSController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        //anim.SetTrigger("walk");
     }
 
     // Update is called once per frame
@@ -82,8 +83,33 @@ public class FPSController : MonoBehaviour
         #region Sword Swing
         if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.LeftArrow))
         {
-            animator.SetBool("LAttack", true);
+            anim.SetBool("LAttack", true);
             Debug.Log("lEFT mOUSE BUTTON CLICKED");
+        }
+        #endregion
+
+        #region Walk and Jump
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("w pressed");
+            anim.SetTrigger("walk");
+            anim.SetBool("walk 0", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            anim.SetTrigger("walk");
+            anim.SetBool("walk 0", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("space bar pressed");
+            anim.SetTrigger("jump");
+            anim.SetBool("jump 0", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space) /*|| characterController.isGrounded*/)
+        {
+            anim.SetTrigger("jump");
+            anim.SetBool("jump 0", false);
         }
         #endregion
 
