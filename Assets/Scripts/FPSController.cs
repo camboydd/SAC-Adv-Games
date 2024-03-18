@@ -120,6 +120,7 @@ public class FPSController : MonoBehaviour
         }
         #endregion
 
+
     }
 
     private IEnumerator HandleIt()
@@ -133,4 +134,5 @@ public class FPSController : MonoBehaviour
         
         beingHandled = false;
     }
+
 }
