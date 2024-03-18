@@ -81,10 +81,21 @@ public class FPSController : MonoBehaviour
         #endregion
 
         #region Sword Swing
-        if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetMouseButtonDown(0)/* || Input.GetKey(KeyCode.LeftArrow)*/)
         {
-            anim.SetBool("LAttack", true);
+            anim.SetBool("attack 0", true);
             Debug.Log("lEFT mOUSE BUTTON CLICKED");
+            Debug.Log(anim);
+            Debug.Log(anim.GetBool("attack 0"));
+
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            anim.SetBool("attack 0", false);
+            Debug.Log("lEFT mOUSE BUTTON up");
+            Debug.Log(anim.GetBool("attack 0"));
+
+
         }
         #endregion
 
@@ -92,26 +103,34 @@ public class FPSController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log("w pressed");
-            anim.SetTrigger("walk");
             anim.SetBool("walk 0", true);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
-            anim.SetTrigger("walk");
             anim.SetBool("walk 0", false);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("space bar pressed");
-            anim.SetTrigger("jump");
             anim.SetBool("jump 0", true);
         }
         if (Input.GetKeyUp(KeyCode.Space) /*|| characterController.isGrounded*/)
         {
-            anim.SetTrigger("jump");
             anim.SetBool("jump 0", false);
         }
         #endregion
 
+    }
+
+    private IEnumerator HandleIt()
+    {
+        bool beingHandled = true;
+        // process pre-yield
+        Debug.Log("Waiting 3 seconds");
+        yield return new WaitForSeconds(3.0f);
+        // process post-yield
+        Debug.Log("Waited");
+        
+        beingHandled = false;
     }
 }
