@@ -7551,6 +7551,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7823293702887809713, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eaf8feaaef59887479d184c8b14aafe2, type: 2}
     - target: {fileID: 919132149155446097, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
       propertyPath: m_Name
       value: character (2)
@@ -7559,6 +7563,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2230bef959939f245bc7b3d07040651c, type: 2}
+    - target: {fileID: 2321523695958950486, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1b8cbb57c29d2343a654f47cdb68c4f, type: 2}
+    - target: {fileID: 4123177642777943866, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b94a374d3ce6001489bac9b0378ad58b, type: 2}
     - target: {fileID: 5866666021909216657, guid: 4eed666a276344bdfb5af295616a087a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -7937,7 +7953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 43cf19174db63f549b650fd48a60e071, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3492787
+      value: 2.349279
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 43cf19174db63f549b650fd48a60e071, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21305,6 +21321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sawblade (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3044799357886607768, guid: f1743b005e7bf2445ac2f4cd4c2f6279, type: 3}
+      propertyPath: m_TagString
+      value: dead
+      objectReference: {fileID: 0}
     - target: {fileID: 4424326145804476218, guid: f1743b005e7bf2445ac2f4cd4c2f6279, type: 3}
       propertyPath: m_LocalScale.x
       value: 18.654654
@@ -27334,6 +27354,10 @@ PrefabInstance:
     - target: {fileID: 3044799357886607768, guid: f1743b005e7bf2445ac2f4cd4c2f6279, type: 3}
       propertyPath: m_Name
       value: Sawblade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044799357886607768, guid: f1743b005e7bf2445ac2f4cd4c2f6279, type: 3}
+      propertyPath: m_TagString
+      value: dead
       objectReference: {fileID: 0}
     - target: {fileID: 4424326145804476218, guid: f1743b005e7bf2445ac2f4cd4c2f6279, type: 3}
       propertyPath: m_LocalScale.x

@@ -104,6 +104,16 @@ public class FPSController : MonoBehaviour
         {
             Debug.Log("w pressed");
             anim.SetBool("walk 0", true);
+            /*
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                anim.SetBool("sprint 0", true);
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                anim.SetBool("sprint 0", false);
+            }
+            */
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
@@ -121,7 +131,6 @@ public class FPSController : MonoBehaviour
             anim.SetBool("jump 0", false);
         }
         #endregion
-
 
     }
 
