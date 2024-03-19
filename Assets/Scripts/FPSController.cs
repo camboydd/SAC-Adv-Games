@@ -113,6 +113,8 @@ public class FPSController : MonoBehaviour
         {
             Debug.Log("space bar pressed");
             anim.SetBool("jump 0", true);
+            StartCoroutine("HandleIt");
+            
         }
         if (Input.GetKeyUp(KeyCode.Space) /*|| characterController.isGrounded*/)
         {
@@ -128,10 +130,10 @@ public class FPSController : MonoBehaviour
         bool beingHandled = true;
         // process pre-yield
         Debug.Log("Waiting 3 seconds");
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(.2f);
         // process post-yield
         Debug.Log("Waited");
-        
+        anim.SetBool("jump 0", false);
         beingHandled = false;
     }
 

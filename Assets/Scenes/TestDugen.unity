@@ -5176,7 +5176,7 @@ MonoBehaviour:
   gravity: 10
   lookSpeed: 2
   lookXLimit: 25
-  Sword: {fileID: 0}
+  Sword: {fileID: 1157592851}
   anim: {fileID: 663509065}
   canMove: 1
 --- !u!143 &282640753
