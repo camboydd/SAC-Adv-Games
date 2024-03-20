@@ -15,6 +15,7 @@ public class FPSController : MonoBehaviour
     public float lookSpeed;
     public float lookXLimit;
 
+
     public GameObject Sword;
     [SerializeField] private Animator anim;
 
@@ -37,16 +38,18 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Handles Movment
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
 
-        // Press Left Shift to run
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            // Press Left Shift to run
+            bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
+            float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+            float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        #region Handles Movment
+        
 
         #endregion
 
@@ -80,12 +83,13 @@ public class FPSController : MonoBehaviour
 
         #endregion
 
-        #region Sword Swing
+        #region Sword Swing animation
         if (Input.GetMouseButtonDown(0)/* || Input.GetKey(KeyCode.LeftArrow)*/)
         {
             anim.SetBool("attack 0", true);
             Debug.Log("lEFT mOUSE BUTTON CLICKED");
             Debug.Log(anim);
+            //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
             Debug.Log(anim.GetBool("attack 0"));
 
         }
@@ -94,12 +98,31 @@ public class FPSController : MonoBehaviour
             anim.SetBool("attack 0", false);
             Debug.Log("lEFT mOUSE BUTTON up");
             Debug.Log(anim.GetBool("attack 0"));
+            //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = false;
 
 
         }
         #endregion
 
-        #region Walk and Jump
+        #region Turns on/off weapon collider when animation played
+        float animState;
+        bool collider = false;
+        animState = anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward"))
+        {
+            (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
+            collider = true;
+            canMove = false;
+        }
+        if (collider = true && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+        {
+            (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = false;
+            collider = false;
+            canMove = true;
+        }
+        #endregion
+
+        #region Walk and Jump animations
         if (Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log("w pressed");
