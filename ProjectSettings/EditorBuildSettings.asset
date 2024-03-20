@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: dde2ccd0a2f4e9647ba95379c2e875a8
   - enabled: 1
+    path: Assets/Scenes/TestDugen.unity
+    guid: b92607009f89fc84b8661cacd02017f2
+  - enabled: 0
     path: Assets/Scenes/Scene1.unity
     guid: e2a3225770886d541834d771bcfd9c40
   m_configObjects: {}
