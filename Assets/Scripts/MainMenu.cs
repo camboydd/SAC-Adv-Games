@@ -7,7 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PressPlay () 
     {
-        SceneManager.LoadScene("Scene1");
+        print("new scene");
+        SceneManager.LoadScene("TestDugen");
     }
 
     public void QuitGame(){
