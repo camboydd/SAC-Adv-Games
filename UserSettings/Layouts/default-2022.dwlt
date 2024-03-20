@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 12271
+  controlID: 59
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -239,24 +239,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 5687}
-      m_SelectedIDs: e8eaffff
-      m_LastClickedID: -5400
-      m_ExpandedIDs: f4f7ffff265e0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 24fbffffcc5b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Main
+        m_OriginalName: Main
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 23442
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 6}
       m_SearchString: 
@@ -609,9 +609,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 443.56293, y: -18.1932, z: 445.60638}
+    m_Target: {x: 440.92398, y: -13.308166, z: 260.03845}
     speed: 2
-    m_Value: {x: 443.56293, y: -18.1932, z: 445.60638}
+    m_Value: {x: 440.92398, y: -13.308166, z: 260.03845}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -657,20 +657,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.26047644, y: 0.07435722, z: -0.020191718, w: 0.96246403}
+    m_Target: {x: 0.012081456, y: 0.987956, z: -0.10650997, w: 0.11183979}
     speed: 2
-    m_Value: {x: 0.26043004, y: 0.075796224, z: -0.020581158, w: 0.9622929}
+    m_Value: {x: 0.012240868, y: 0.9877597, z: -0.10648877, w: 0.11331846}
   m_Size:
-    m_Target: 36.249077
+    m_Target: 89.45156
     speed: 2
-    m_Value: 36.249077
+    m_Value: 89.45156
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.28085998
-    m_SpeedNormalized: 0.13999999
+    m_Speed: 0.88056
+    m_SpeedNormalized: 0.44
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1033,21 +1033,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: c0840000
     m_LastClickedID: 33984
-    m_ExpandedIDs: 000000002e670000306700004467000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000002268000024680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Elementary Dungeon Pack Lite
-      m_OriginalName: Elementary Dungeon Pack Lite
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 26436
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -1061,7 +1061,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002e6700003067000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000002268000024680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
