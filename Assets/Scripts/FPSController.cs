@@ -111,12 +111,14 @@ public class FPSController : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward"))
         {
             (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
+            Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
             collider = true;
             canMove = false;
         }
         if (collider = true && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
             (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = false;
+            Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
             collider = false;
             canMove = true;
         }
