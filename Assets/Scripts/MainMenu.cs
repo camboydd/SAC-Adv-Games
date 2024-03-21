@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         print("new scene");
         SceneManager.LoadScene("TestDugen");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("TestDugen"));
     }
 
     public void QuitGame(){
