@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ZombieHit : MonoBehaviour
 {
+    public HealthSystem playerHealth;
     public float hitRange = 2f; // Adjust this value to set the hit range
     public LayerMask playerLayer; // Specify the layer where the player belongs
     public float hitCooldown = 3f; // Cooldown duration between hits
@@ -46,6 +47,16 @@ public class ZombieHit : MonoBehaviour
                     animator.SetTrigger("Hit");
                     playerInRange = true;
                     lastHitTime = Time.time; // Update last hit time
+                    if (!(playerHealth.getHealth() <= 0))
+                    {
+                        playerHealth.DamageHealth();
+                    }
+                    
+                    if(playerHealth.getHealth() <= 0)
+                    {
+                        playerHealth.destroyPlayer();
+                    }
+
                 }
             }
             else

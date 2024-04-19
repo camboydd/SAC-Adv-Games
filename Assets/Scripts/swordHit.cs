@@ -5,6 +5,8 @@ using UnityEngine;
 public class swordHit : MonoBehaviour
 {
 
+    public bool didHit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,15 @@ public class swordHit : MonoBehaviour
             Debug.Log("Sword Hit Enemy");
             Destroy(collision.gameObject);
         }
+    }
+
+    public bool getHit()
+    {
+        return didHit;
+    }
+
+    public void setHit(bool hold)
+    {
+        didHit = hold;
     }
 }
