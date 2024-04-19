@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent enemy;
     public Transform player;
+    public HealthSystem playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(player.position);
+        if (!(playerHealth.getHealth() <= 0))
+        {
+            enemy.SetDestination(player.position);
+        }
     }
 }

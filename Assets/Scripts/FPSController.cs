@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
-
+    public HealthSystem playerHealth;
     public Camera playerCamera;
     public float walkSpeed;
     public float runSpeed;
@@ -38,7 +38,9 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (!(playerHealth.getHealth() <= 0))
+        {
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -157,6 +159,9 @@ public class FPSController : MonoBehaviour
         }
         #endregion
 
+        
+
+        }
     }
 
     private IEnumerator HandleIt()
