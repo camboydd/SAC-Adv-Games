@@ -7,6 +7,7 @@ public class HealthSystem : MonoBehaviour
 {
 
     [SerializeField] public GameObject SliderTEST;
+    [SerializeField] public GameObject canvasRestart;
     [SerializeField] private int maxHealth;
     [SerializeField] private int Health;
     [SerializeField] private int Damage;
@@ -40,6 +41,12 @@ public class HealthSystem : MonoBehaviour
         if(Health > 0)
         {
             Health = Health - Damage;
+            if(Health <= 0)
+            {
+                canvasRestart.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
     }
 
