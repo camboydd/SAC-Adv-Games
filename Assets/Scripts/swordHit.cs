@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class swordHit : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class swordHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<AudioManager>().Play("SwordPullOut");
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class swordHit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy")){
             Debug.Log("Sword Hit Enemy");
+            FindObjectOfType<AudioManager>().Play("ZombieHit");
             Destroy(collision.gameObject);
         }
     }

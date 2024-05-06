@@ -46,6 +46,7 @@ public class ZombieHit : MonoBehaviour
                 {
                     animator.SetTrigger("Hit");
                     playerInRange = true;
+                    FindObjectOfType<AudioManager>().Play("Zombie1");
                     lastHitTime = Time.time; // Update last hit time
                     if (!(playerHealth.getHealth() <= 0))
                     {
