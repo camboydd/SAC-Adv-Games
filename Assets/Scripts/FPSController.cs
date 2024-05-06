@@ -91,8 +91,9 @@ public class FPSController : MonoBehaviour
             anim.SetBool("attack 0", true);
             Debug.Log("lEFT mOUSE BUTTON CLICKED");
             Debug.Log(anim);
-            //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
-            Debug.Log(anim.GetBool("attack 0"));
+                FindObjectOfType<AudioManager>().Play("SwordSound1");
+                //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
+                Debug.Log(anim.GetBool("attack 0"));
 
         }
         if (Input.GetMouseButtonUp(0))
@@ -166,14 +167,14 @@ public class FPSController : MonoBehaviour
 
     private IEnumerator HandleIt()
     {
-        bool beingHandled = true;
+        //bool beingHandled = true;
         // process pre-yield
         Debug.Log("Waiting 3 seconds");
         yield return new WaitForSeconds(.2f);
         // process post-yield
         Debug.Log("Waited");
         anim.SetBool("jump 0", false);
-        beingHandled = false;
+        //beingHandled = false;
     }
 
 }

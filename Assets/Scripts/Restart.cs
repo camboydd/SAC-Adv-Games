@@ -9,9 +9,22 @@ public class Restart : MonoBehaviour
     [SerializeField] public GameObject canvasRestart;
     public void pressRestart()
     {
+        
         print("restart");
         string currentSceneN = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneN);
+        if(currentSceneN == "Tower")
+        {
+            SceneManager.LoadScene("TowerALT");
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("TowerALT"));
+        }
+        else
+        {
+            SceneManager.LoadScene("Tower");
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Tower"));
+
+        }
+        
+        //SceneManager.LoadScene(currentSceneN);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("TestDugen"));
     }
 

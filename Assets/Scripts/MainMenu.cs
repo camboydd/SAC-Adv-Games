@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
     public void PressPlay () 
     {
         print("new scene");
-        SceneManager.LoadScene("TestDugen");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("TestDugen"));
+        SceneManager.LoadScene("Tower");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Tower"));
     }
 
     public void QuitGame(){

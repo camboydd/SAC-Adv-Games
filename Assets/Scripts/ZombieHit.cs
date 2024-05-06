@@ -46,8 +46,9 @@ public class ZombieHit : MonoBehaviour
                 {
                     animator.SetTrigger("Hit");
                     playerInRange = true;
-                    FindObjectOfType<AudioManager>().Play("Zombie1");
+                    //FindObjectOfType<AudioManager>().Play("Zombie1");
                     lastHitTime = Time.time; // Update last hit time
+                    /*
                     if (!(playerHealth.getHealth() <= 0))
                     {
                         playerHealth.DamageHealth();
@@ -57,7 +58,7 @@ public class ZombieHit : MonoBehaviour
                     {
                         playerHealth.destroyPlayer();
                     }
-
+                    */
                 }
             }
             else
@@ -91,6 +92,26 @@ public class ZombieHit : MonoBehaviour
         if (distanceToPlayer <= hitRange && player.layer == playerLayer)
         {
             Debug.Log("Zombie hit collided with the player!");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.SetTrigger("Hit");
+            playerInRange = true;
+            FindObjectOfType<AudioManager>().Play("Zombie1");
+            lastHitTime = Time.time; // Update last hit time
+            if (!(playerHealth.getHealth() <= 0))
+            {
+                playerHealth.DamageHealth();
+            }
+
+            if (playerHealth.getHealth() <= 0)
+            {
+                playerHealth.destroyPlayer();
+            }
         }
     }
 }
