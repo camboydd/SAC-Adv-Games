@@ -5588,10 +5588,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Throne
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5733f9122e42eac43a5c2fe88ce50d79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5733f9122e42eac43a5c2fe88ce50d79, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1754801894}
   m_SourcePrefab: {fileID: 100100000, guid: 5733f9122e42eac43a5c2fe88ce50d79, type: 3}
 --- !u!1001 &337480041
 PrefabInstance:
@@ -6365,6 +6372,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5981562312196831680, guid: 9219eeec429c86b459f29c67fd3e5e05, type: 3}
   m_PrefabInstance: {fileID: 362642709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &364708810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5733f9122e42eac43a5c2fe88ce50d79, type: 3}
+  m_PrefabInstance: {fileID: 332489639}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &366575420
 PrefabInstance:
@@ -18696,6 +18708,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+--- !u!1 &1148533803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1148533804}
+  m_Layer: 0
+  m_Name: InteractionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1148533804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148533803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1201450585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1148964358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19629,6 +19672,7 @@ GameObject:
   - component: {fileID: 1201450584}
   - component: {fileID: 1201450583}
   - component: {fileID: 1201450582}
+  - component: {fileID: 1201450586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19721,8 +19765,28 @@ Transform:
   - {fileID: 1003415892}
   - {fileID: 59354964}
   - {fileID: 1975572276}
+  - {fileID: 1148533804}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1201450586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201450581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b476e2870c913a740b09950059843b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionPoint: {fileID: 1148533804}
+  _interactionPointRadius: 0.5
+  _interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  canvas: {fileID: 22963666}
+  _numFound: 0
 --- !u!4 &1211334323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2317576605586290934, guid: 5adaedd4c0081614da171fecdf6bbd37, type: 3}
@@ -27920,6 +27984,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5733f9122e42eac43a5c2fe88ce50d79, type: 3}
   m_PrefabInstance: {fileID: 332489639}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754801894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364708810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49912907d8bae864686a4e44840d069a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1755448816
 PrefabInstance:
   m_ObjectHideFlags: 0
