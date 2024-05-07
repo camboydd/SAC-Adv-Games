@@ -7,8 +7,8 @@ public class FPSController : MonoBehaviour
 {
     public HealthSystem playerHealth;
     public Camera playerCamera;
-    public float walkSpeed;
-    public float runSpeed;
+    public static float walkSpeed;
+    public static float runSpeed;
     public float jumpPower;
     public float gravity;
 
@@ -46,13 +46,8 @@ public class FPSController : MonoBehaviour
     {
 
         #region handles Stats
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            GetStats.setSpeed(GetStats.getSpeed() + 2);
-            walkSpeed = GetStats.getSpeed();
-            runSpeed = GetStats.getSpeed() + 2;
-        }
-
+        //walkSpeed = GetStats.getSpeed();
+        //runSpeed = GetStats.getSpeed() + 2;
         #endregion
 
 
@@ -204,5 +199,12 @@ public class FPSController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("In Box");
         }
+    }
+
+    public static void upgradeSpeed()
+    {
+        GetStats.setSpeed(GetStats.getSpeed() + 2);
+        walkSpeed = GetStats.getSpeed();
+        runSpeed = GetStats.getSpeed() + 2;
     }
 }

@@ -8,10 +8,11 @@ public class HealthSystem : MonoBehaviour
 
     [SerializeField] public GameObject SliderTEST;
     [SerializeField] public GameObject canvasRestart;
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int Health;
+    [SerializeField] public static int maxHealth;
+    [SerializeField] public static int Health;
     [SerializeField] private int Damage;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject stats;
     public Slider slider;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class HealthSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.F))
         {
 
@@ -70,8 +72,26 @@ public class HealthSystem : MonoBehaviour
         return Health;
     }
 
+    public void setHealth(int x)
+    {
+        Health = x;
+    }
+
     public void destroyPlayer()
     {
         Destroy(player);
+    }
+
+    public static void updateHealth()
+    {
+        GetStats.setHealth((GetStats.getHealth()) + 20);
+        int x = GetStats.getHealth();
+        Health = x;
+        maxHealth = Health;
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(stats);
     }
 }
