@@ -18,6 +18,8 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         Health = maxHealth;
+        Health = GetStats.getHealth();
+        maxHealth = Health;
     }
 
     // Update is called once per frame
@@ -25,7 +27,12 @@ public class HealthSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            ApplyHealing();
+
+            GetStats.setHealth((GetStats.getHealth()) + 20);
+            Health = GetStats.getHealth();
+            maxHealth = Health;
+            Debug.Log(maxHealth);
+            //ApplyHealing();
         }
 
         if (Input.GetKeyDown(KeyCode.R))

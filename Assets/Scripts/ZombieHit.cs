@@ -91,13 +91,14 @@ public class ZombieHit : MonoBehaviour
         // Check if the player is within the hit range and on the correct layer halfway through the animation
         if (distanceToPlayer <= hitRange && player.layer == playerLayer)
         {
-            Debug.Log("Zombie hit collided with the player!");
+            //Debug.Log("Zombie hit collided with the player!");
         }
     }
 
+    bool doDamage = true;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && doDamage)
         {
             animator.SetTrigger("Hit");
             playerInRange = true;
@@ -106,12 +107,21 @@ public class ZombieHit : MonoBehaviour
             if (!(playerHealth.getHealth() <= 0))
             {
                 playerHealth.DamageHealth();
+                doDamage = false;
             }
 
             if (playerHealth.getHealth() <= 0)
             {
                 playerHealth.destroyPlayer();
             }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            doDamage = true;
         }
     }
 }

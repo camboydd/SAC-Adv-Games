@@ -20,12 +20,27 @@ public class swordHit : MonoBehaviour
 
     }
 
+    bool doDamage = true;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("enemy")){
-            Debug.Log("Sword Hit Enemy");
+
+        if (collision.gameObject.CompareTag("enemy") && doDamage){
+            //Debug.Log("Sword Hit Enemy");
             FindObjectOfType<AudioManager>().Play("ZombieHit");
             Destroy(collision.gameObject);
+            GetStats.setTotalZombies(GetStats.getTotalZombies() - 1);
+            doDamage = false;
+            Debug.Log(GetStats.getTotalZombies());
+            
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            doDamage = true;
+
         }
     }
 

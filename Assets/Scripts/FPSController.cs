@@ -15,6 +15,8 @@ public class FPSController : MonoBehaviour
     public float lookSpeed;
     public float lookXLimit;
 
+    [SerializeField] public GameObject canvasRestart;
+
 
     public GameObject Sword;
     [SerializeField] private Animator anim;
@@ -33,12 +35,28 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //anim.SetTrigger("walk");
+
+        walkSpeed = GetStats.addedSpeed;
+        runSpeed = GetStats.addedSpeed + 2;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        #region handles Stats
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            GetStats.setSpeed(GetStats.getSpeed() + 2);
+            walkSpeed = GetStats.getSpeed();
+            runSpeed = GetStats.getSpeed() + 2;
+        }
+
+        #endregion
+
+
+
         if (!(playerHealth.getHealth() <= 0))
         {
 
@@ -89,18 +107,18 @@ public class FPSController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)/* || Input.GetKey(KeyCode.LeftArrow)*/)
         {
             anim.SetBool("attack 0", true);
-            Debug.Log("lEFT mOUSE BUTTON CLICKED");
-            Debug.Log(anim);
+            //Debug.Log("lEFT mOUSE BUTTON CLICKED");
+            //Debug.Log(anim);
                 FindObjectOfType<AudioManager>().Play("SwordSound1");
                 //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
-                Debug.Log(anim.GetBool("attack 0"));
+                //Debug.Log(anim.GetBool("attack 0"));
 
         }
         if (Input.GetMouseButtonUp(0))
         {
             anim.SetBool("attack 0", false);
-            Debug.Log("lEFT mOUSE BUTTON up");
-            Debug.Log(anim.GetBool("attack 0"));
+            //Debug.Log("lEFT mOUSE BUTTON up");
+            //Debug.Log(anim.GetBool("attack 0"));
             //(Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = false;
 
 
@@ -114,14 +132,14 @@ public class FPSController : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward"))
         {
             (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = true;
-            Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
+            //Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
             collider = true;
             canMove = false;
         }
         if (collider = true && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
             (Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled = false;
-            Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
+            //Debug.Log((Sword.GetComponent(typeof(CapsuleCollider)) as Collider).enabled);
             collider = false;
             canMove = true;
         }
@@ -149,7 +167,7 @@ public class FPSController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("space bar pressed");
+            //Debug.Log("space bar pressed");
             anim.SetBool("jump 0", true);
             StartCoroutine("HandleIt");
             
@@ -177,4 +195,14 @@ public class FPSController : MonoBehaviour
         //beingHandled = false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            canvasRestart.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("In Box");
+        }
+    }
 }
